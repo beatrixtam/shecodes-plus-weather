@@ -24,18 +24,18 @@
 #temp-heading {
 	font-size: 48px;
 	font-weight: bold;
+	text-transform: capitalize;
 }
 
 .location {
 	display: inline-block;
 	text-align: right;
 }
-.symbol {
-	font-size: 45px;
-}
 
 #units {
 	font-size: 18px;
+	position: relative;
+	top: -15px;
 }
 
 #celsius,
