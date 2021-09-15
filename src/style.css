@@ -1,0 +1,53 @@
+.container {
+	font-family: "Raleway", sans-serif;
+	margin: 50px;
+}
+
+.card {
+	display: block;
+	margin: 0 auto;
+	width: 550px;
+}
+
+.changeCity {
+	display: inline-block;
+	width: 280px;
+	height: 33px;
+}
+
+.display {
+	text-align: center;
+	padding: 25px;
+}
+
+#city-heading,
+#temp-heading {
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.location {
+	display: inline-block;
+	text-align: right;
+}
+.symbol {
+	font-size: 45px;
+}
+
+#units {
+	font-size: 18px;
+}
+
+#celsius,
+#fahrenheit {
+	text-decoration: none;
+	color: grey;
+}
+.author {
+	text-decoration: none;
+}
+
+p {
+	text-align: center;
+	font-size: 10px;
+}
