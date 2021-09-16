@@ -47,7 +47,7 @@ p {
 	color: grey;
 }
 
-#description {
+#description:first-letter {
 	text-transform: capitalize;
 }
 
