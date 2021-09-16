@@ -44,8 +44,20 @@ function showTemperature(response) {
 	);
 }
 
-let apiKey = "ca40b820105beb53b92d32a2aebf57bb";
-let city = "Prague";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+	let apiKey = "ca40b820105beb53b92d32a2aebf57bb";
+	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(showTemperature);
+	axios.get(apiUrl).then(showTemperature);
+}
+
+function submitCity(event) {
+	event.preventDefault();
+	let cityInputElement = document.querySelector("#search-city");
+	search(cityInputElement.value);
+}
+
+search("Prague");
+
+let changeCity = document.querySelector("#search-bar");
+changeCity.addEventListener("submit", submitCity);
