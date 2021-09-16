@@ -19,7 +19,6 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
-	console.log(response.data);
 	let temperatureElement = document.querySelector("#temp-now");
 	temperatureElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -33,13 +32,14 @@ function showTemperature(response) {
 	humidityElement.innerHTML = response.data.main.humidity;
 
 	let windElement = document.querySelector("#wind");
-	windElement.innerHTMAL = Math.round(response.data.wind.speed);
+	windElement.innerHTML = Math.round(response.data.wind.speed);
 
 	let dateElement = document.querySelector("#date-time");
 	dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 let apiKey = "ca40b820105beb53b92d32a2aebf57bb";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
+let city = "Prague";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showTemperature);
