@@ -1,5 +1,7 @@
 function formatDate(timestamp) {
 	let date = new Date(timestamp);
+	let hours = date.getHours();
+	let minutes = date.getMinutes();
 	let days = [
 		"Sunday",
 		"Monday",
@@ -10,31 +12,22 @@ function formatDate(timestamp) {
 		"Saturday",
 	];
 	let day = days[date.getDay()];
-	let hours = date.getHours();
-	let minutes = date.getMinutes();
-
-	let now = `${day} ${hours}:${minutes}`;
-
-	return now;
+	return `${day} ${hours}:${minutes}`;
 }
 
 function showTemperature(response) {
 	let temperatureElement = document.querySelector("#temp-now");
-	temperatureElement.innerHTML = Math.round(response.data.main.temp);
-
 	let cityElement = document.querySelector("#city-heading");
-	cityElement.innerHTML = response.data.name;
-
 	let descriptionElement = document.querySelector("#description");
-	descriptionElement.innerHTML = response.data.weather[0].description;
-
 	let humidityElement = document.querySelector("#humidity");
-	humidityElement.innerHTML = response.data.main.humidity;
-
 	let windElement = document.querySelector("#wind");
-	windElement.innerHTML = Math.round(response.data.wind.speed);
+	let dateElement = document.querySelector("#date");
 
-	let dateElement = document.querySelector("#date-time");
+	temperatureElement.innerHTML = Math.round(response.data.main.temp);
+	cityElement.innerHTML = response.data.name;
+	descriptionElement.innerHTML = response.data.weather[0].description;
+	humidityElement.innerHTML = response.data.main.humidity;
+	windElement.innerHTML = Math.round(response.data.wind.speed);
 	dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
 	let iconElement = document.querySelector("#icon");
