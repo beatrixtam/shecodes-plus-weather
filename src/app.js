@@ -42,6 +42,8 @@ function showTemperature(response) {
 		"src",
 		`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 	);
+
+	celsiusTemp = Math.round(response.data.main.temp);
 }
 
 function search(city) {
@@ -57,7 +59,32 @@ function submitCity(event) {
 	search(cityInputElement.value);
 }
 
-search("Prague");
+function displayFahrenheit(event) {
+	event.preventDefault();
+	let fahrenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
+	let temperatureElement = document.querySelector("#temp-now");
+	chooseCelsius.classList.remove("active");
+	chooseFahrenheit.classList.add("active");
+	temperatureElement.innerHTML = fahrenheitTemp;
+}
+
+function displayCelsius(event) {
+	event.preventDefault();
+	let temperatureElement = document.querySelector("#temp-now");
+	chooseCelsius.classList.add("active");
+	chooseFahrenheit.classList.remove("active");
+	temperatureElement.innerHTML = celsiusTemp;
+}
+
+let celsiusTemp = null;
 
 let changeCity = document.querySelector("#search-bar");
 changeCity.addEventListener("submit", submitCity);
+
+let chooseFahrenheit = document.querySelector("#fahrenheit");
+chooseFahrenheit.addEventListener("click", displayFahrenheit);
+
+let chooseCelsius = document.querySelector("#celsius");
+chooseCelsius.addEventListener("click", displayCelsius);
+
+search("Prague");

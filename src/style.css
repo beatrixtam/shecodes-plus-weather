@@ -46,10 +46,18 @@ p {
 	padding-bottom: 12px;
 }
 
-#celsius,
-#fahrenheit {
+#fahrenheit,
+#celsius {
 	text-decoration: none;
-	color: grey;
+}
+#temp-heading .active {
+	color: gray;
+	cursor: default;
+	text-decoration: none;
+}
+
+#temp-heading .active:hover {
+	text-decoration: none;
 }
 
 #description:first-letter {
