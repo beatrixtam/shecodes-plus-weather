@@ -41,6 +41,11 @@ p {
 	text-transform: capitalize;
 }
 
+#city-heading {
+	padding-top: 15px;
+	padding-bottom: 12px;
+}
+
 #celsius,
 #fahrenheit {
 	text-decoration: none;
@@ -51,6 +56,9 @@ p {
 	text-transform: capitalize;
 }
 
+#search-bar {
+	padding-top: 15px;
+}
 #units {
 	font-size: 18px;
 	position: relative;
