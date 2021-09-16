@@ -1,3 +1,12 @@
+p {
+	text-align: center;
+	font-size: 10px;
+}
+
+.author {
+	text-decoration: none;
+}
+
 .container {
 	font-family: "Raleway", sans-serif;
 	margin: 50px;
@@ -20,6 +29,11 @@
 	padding: 25px;
 }
 
+.location {
+	display: inline-block;
+	text-align: right;
+}
+
 #city-heading,
 #temp-heading {
 	font-size: 48px;
@@ -27,27 +41,18 @@
 	text-transform: capitalize;
 }
 
-.location {
-	display: inline-block;
-	text-align: right;
+#celsius,
+#fahrenheit {
+	text-decoration: none;
+	color: grey;
+}
+
+#description {
+	text-transform: capitalize;
 }
 
 #units {
 	font-size: 18px;
 	position: relative;
 	top: -15px;
-}
-
-#celsius,
-#fahrenheit {
-	text-decoration: none;
-	color: grey;
-}
-.author {
-	text-decoration: none;
-}
-
-p {
-	text-align: center;
-	font-size: 10px;
 }
