@@ -7,15 +7,15 @@ p {
 	text-decoration: none;
 }
 
-.container {
-	font-family: "Raleway", sans-serif;
-	margin: 50px;
-}
-
 .card {
 	display: block;
 	margin: 0 auto;
 	width: 550px;
+}
+
+.container {
+	font-family: "Raleway", sans-serif;
+	margin: 50px;
 }
 
 .changeCity {
@@ -32,6 +32,21 @@ p {
 .location {
 	display: inline-block;
 	text-align: right;
+}
+
+.weather-forecast-day {
+	text-align: center;
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+.weather-forecast-temp {
+	text-align: center;
+	font-size: 15px;
+}
+
+.weather-forecast-temp-min {
+	opacity: 0.5;
 }
 
 #city-heading,
